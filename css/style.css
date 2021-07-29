@@ -6,10 +6,15 @@ body {
   color: #0a143a;
 }
 
-.header {
+.conrainer {
   max-width: 1146px;
   margin: auto;
+}
+
+.header {
   padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 12px; /* общий отступ по макету 42 px, сделали двумя свойствами */
 }
 
 .navbar {
@@ -94,4 +99,145 @@ body {
 
 .search-button-text {
   margin-left: 5px;
+}
+
+.page-content {
+  display: grid; /* задаем сетку для разметки */
+  grid-template-columns: 9fr 3fr; /* проставили колонки в сетке, на 9 и 3 части */
+  grid-column-gap: 30px; /* отступ между колонками */
+}
+
+.main-header {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #0a143a;
+}
+
+.card-image {
+  border-radius: 10px;
+  width: 264px;
+  height: 178px;
+  object-fit: cover; /* обрезает картинку, если не влазит на экран */
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap; /* перенос элементов */
+  /*  justify-content: space-between; распределение составляющих по краям элемента */
+}
+/* Убрали значение, т.к если карт не четное 3-м кол-во, они будут криво распределятся, можно сделать с помощью отступа как ниже */
+.card {
+  margin-bottom: 20px;
+  max-width: 264px;
+}
+
+/* Ниже убрали отступ с 3-й карты */
+.card:not(:nth-child(3n)) {
+  margin-right: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #256eeb;
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+
+.like {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 15px; /* сделали отступ, что бы текст не прижимался к лайку */
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+.card-price {
+  display: block;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 14px;
+  line-height: 16px;
+  color: #c4c4c4;
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+/* /.main */
+
+.sidebar-header {
+  display: inline-block;
+  margin-top: 0px;
+  margin-bottom: 25px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 28px;
+  color: #0a143a;
+}
+
+.service {
+  margin-bottom: 25px;
+}
+
+.service-title {
+  margin-top: 7px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #0a143a;
+}
+
+.service-text {
+  font-size: 14px;
+  line-height: 16px;
+  color: #0a143a;
+  max-width: 217px;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 16px;
+  color: #c4c4c4;
+  margin-bottom: 5px;
+}
+
+.footer-menu {
+  margin: 0;
+  margin-bottom: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-menu-item {
+  /*  font-size: 14px;
+  line-height: 16px;
+  text-decoration: underline;
+  color: #c4c4c4; */
+  margin-bottom: 5px;
+}
+
+.footer-link {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 14px;
+  color: #000000;
 }
