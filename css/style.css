@@ -6,7 +6,7 @@ body {
   color: #0a143a;
 }
 
-.conrainer {
+.container {
   max-width: 1146px;
   margin: auto;
 }
@@ -104,7 +104,7 @@ body {
 .page-content {
   display: grid; /* задаем сетку для разметки */
   grid-template-columns: 9fr 3fr; /* проставили колонки в сетке, на 9 и 3 части */
-  grid-column-gap: 30px; /* отступ между колонками */
+  grid-column-gap: 10px; /* отступ между колонками */
 }
 
 .main-header {
@@ -133,12 +133,14 @@ body {
 .card {
   margin-bottom: 20px;
   max-width: 264px;
+  margin-right: 20px;
 }
 
 /* Ниже убрали отступ с 3-й карты */
-.card:not(:nth-child(3n)) {
+/* в дальнейшем убрали для адаптива */
+/* .card:not(:nth-child(3n)) {
   margin-right: 20px;
-}
+} */
 
 .card-header {
   display: flex;
@@ -240,4 +242,253 @@ body {
   font-size: 12px;
   line-height: 14px;
   color: #000000;
+}
+
+.content {
+  max-width: 460px;
+  margin-right: 30px;
+}
+
+.main-single {
+  display: flex;
+  align-items: flex-start;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.mySwiper2 {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.content-text {
+  font-size: 14px;
+  line-height: 140%;
+  color: #0a143a;
+}
+
+.single-price {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  color: #0a143a;
+}
+
+.author {
+  min-width: 264px;
+}
+
+.author-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+
+.author-avatar {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.author-name {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  color: #0a143a;
+}
+
+.rating {
+  margin-bottom: 5px;
+}
+
+.rating-counter {
+  font-size: 14px;
+  line-height: 16px;
+  color: #0a143a;
+  opacity: 0.5;
+  margin-left: 10px;
+}
+
+.author-status {
+  font-size: 12px;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+  height: 54px;
+  margin-bottom: 14px;
+  border: none;
+}
+
+.button-success {
+  background-color: #14b4be;
+  border-radius: 5px;
+  color: white;
+}
+
+.menu-button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar-panel {
+  flex-grow: 1; /* растянули по ширине */
+  display: flex; /* сделали гибким */
+  align-items: center; /* выровняли по середине */
+}
+
+.close-menu {
+  display: none;
+}
+
+/* ниже будут идти медиа-запросы для адаптивной верстки */
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  .card {
+    width: 45%;
+  }
+  .card-image {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 740px;
+  }
+  .card-image {
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 560px;
+  }
+  .card {
+    width: 100%;
+  }
+  .page-content {
+    grid-template-columns: 8fr 4fr;
+  }
+  .menu-button {
+    display: block;
+  }
+  .close-menu {
+    display: block;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    cursor: pointer;
+    background-color: #fff;
+    border: none;
+  }
+  .navbar-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9;
+    flex-direction: column; /* выстроили дочерние элементы в столбец */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, opacity 0.2s;
+    transform: translateX(
+      100%
+    ); /* убираем меню в сторону, его не будет видно */
+    opacity: 0;
+  }
+  .is-open {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  .navbar-menu {
+    margin-left: auto;
+    margin-bottom: 20px;
+  }
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-item {
+    margin-bottom: 10px;
+  }
+  /* .menu-item:not(:last-child) {
+    margin-right: 0px;
+  } */
+  .button-group {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 90%;
+  }
+  .page-content {
+    grid-template-columns: 12fr;
+  }
+  .card-image {
+    height: 250px;
+  }
+  .card {
+    margin-right: 0;
+  }
+  .search-button-text {
+    display: none;
+  }
 }
